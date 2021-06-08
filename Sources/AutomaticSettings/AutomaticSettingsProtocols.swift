@@ -9,7 +9,7 @@ import SwiftUI
 /// - injectFooter: automatically injects section footer via function you define named `sectionNameFooter`
 /// - injectHeader: automatically injects section header via function you define named `sectionNameHeader`
 /// - note: If you decide to auto-inject either header or footer then the codegen won't generate functions that would allow you to pass them manually to prevent developers from causing inconsistent behaviour
-public protocol AutomaticSettings: Codable, Equatable {}
+public protocol AutomaticSettingsStruct: Codable, Equatable {}
 
 /// Enum type that's automatically supported by AutomaticSettings
 public protocol AutomaticSettingsEnum: RawRepresentable, Codable, Equatable, CaseIterable {}

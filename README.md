@@ -5,17 +5,17 @@
 
 Create your Swift structure and let the UI be generated for you automatically
 ```swift
-struct Calculation: AutomaticSettings {
+struct Calculation: AutomaticSettingsStruct {
         var text = ""
         var mode = Mode.linearRegression
     }
 
     // sourcery: injectFooter
-    struct Smoothing: AutomaticSettings {
+    struct Smoothing: AutomaticSettingsStruct {
         var dayPeriod = 7
         var algorithm = Algorithm.movingAverage
 
-        struct Grouped: AutomaticSettings {
+        struct Grouped: AutomaticSettingsStruct {
             // sourcery: range = 1...4
             var level: Float = 1
 
@@ -48,8 +48,8 @@ Settings are:
 You have a master structure for your settings e.g.
 
 ```swift
-struct BetaSettings: AutomaticSettings {
-    struct Calculation: AutomaticSettings {
+struct BetaSettings: AutomaticSettingsStruct {
+    struct Calculation: AutomaticSettingsStruct {
         var mode = .linearRegression
         var averageMethod = .weightedAverage
         var timePeriod = 7

@@ -1,6 +1,6 @@
 import AutomaticSettings
 
-struct Settings: AutomaticSettings {
+struct Settings: AutomaticSettingsStruct {
     enum Mode: String, AutomaticSettingsEnum {
         case linearRegression
         case weightedAverage
@@ -12,17 +12,17 @@ struct Settings: AutomaticSettings {
         case expotentialAverage
     }
 
-    struct Calculation: AutomaticSettings {
+    struct Calculation: AutomaticSettingsStruct {
         var text = ""
         var mode = Mode.linearRegression
     }
 
     // sourcery: injectFooter
-    struct Smoothing: AutomaticSettings {
+    struct Smoothing: AutomaticSettingsStruct {
         var dayPeriod = 7
         var algorithm = Algorithm.movingAverage
 
-        struct Grouped: AutomaticSettings {
+        struct Grouped: AutomaticSettingsStruct {
             // sourcery: range = 1...4, step = 0.5
             var level: Float = 1
 
