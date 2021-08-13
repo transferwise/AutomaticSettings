@@ -14,8 +14,8 @@ public protocol AutomaticSettingsStruct: Codable, Equatable {}
 /// Enum type that's automatically supported by AutomaticSettings
 public protocol AutomaticSettingsEnum: RawRepresentable, Codable, Equatable, CaseIterable {}
 
-/// A Number type that can be converted from/to String, _FormatSpecifiable is required by SwiftUI Components dealing with numeric display
-public protocol StringConvertibleNumber: _FormatSpecifiable {
+/// A Number type that can be converted from/to String, SwiftUI._FormatSpecifiable is required by SwiftUI Components dealing with numeric display
+public protocol StringConvertibleNumber: SwiftUI._FormatSpecifiable {
     init?(_ description: String)
 }
 

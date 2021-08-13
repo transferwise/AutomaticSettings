@@ -98,7 +98,7 @@ public extension AutomaticSettingsViewDSL {
     }
 
     @_disfavoredOverload
-    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Number>) -> some View where Number: BinaryFloatingPoint, Number.Stride: BinaryFloatingPoint, Number: _FormatSpecifiable {
+    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Number>) -> some View where Number: BinaryFloatingPoint, Number.Stride: BinaryFloatingPoint, Number: SwiftUI._FormatSpecifiable {
         VStack(alignment: .leading) {
             Text("\(name.automaticSettingsTitleCase): \(viewModel.current[keyPath: keyPath])")
             Slider(
@@ -117,7 +117,7 @@ public extension AutomaticSettingsViewDSL {
     }
 
     @_disfavoredOverload
-    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Number>, step: Number.Stride) -> some View where Number: BinaryFloatingPoint, Number.Stride: BinaryFloatingPoint, Number: _FormatSpecifiable {
+    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Number>, step: Number.Stride) -> some View where Number: BinaryFloatingPoint, Number.Stride: BinaryFloatingPoint, Number: SwiftUI._FormatSpecifiable {
         VStack(alignment: .leading) {
             Text("\(name.automaticSettingsTitleCase): \(viewModel.current[keyPath: keyPath])")
             Slider(
@@ -137,7 +137,7 @@ public extension AutomaticSettingsViewDSL {
     }
 
     @_disfavoredOverload
-    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Float>) -> some View where Number: FixedWidthInteger, Number: _FormatSpecifiable {
+    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Float>) -> some View where Number: FixedWidthInteger, Number: SwiftUI._FormatSpecifiable {
         let binding = viewModel.binding(
             keyPath: keyPath,
             requiresRestart: requiresRestart,
@@ -161,7 +161,7 @@ public extension AutomaticSettingsViewDSL {
     }
 
     @_disfavoredOverload
-    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Float>, step: Number) -> some View where Number: FixedWidthInteger, Number: _FormatSpecifiable {
+    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String, range: ClosedRange<Float>, step: Number) -> some View where Number: FixedWidthInteger, Number: SwiftUI._FormatSpecifiable {
         let binding = viewModel.binding(
             keyPath: keyPath,
             requiresRestart: requiresRestart,
@@ -186,7 +186,7 @@ public extension AutomaticSettingsViewDSL {
     }
 
     @_disfavoredOverload
-    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String) -> some View where Number: BinaryFloatingPoint, Number.Stride: BinaryFloatingPoint, Number: _FormatSpecifiable {
+    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String) -> some View where Number: BinaryFloatingPoint, Number.Stride: BinaryFloatingPoint, Number: SwiftUI._FormatSpecifiable {
         VStack {
             HStack {
                 Slider(
@@ -203,7 +203,7 @@ public extension AutomaticSettingsViewDSL {
     }
 
     @_disfavoredOverload
-    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String) -> some View where Number: Strideable, Number: _FormatSpecifiable {
+    func setting<Number>(_ name: String, keyPath: WritableKeyPath<Settings, Number>, requiresRestart: Bool = false, sideEffect: (() -> Void)? = nil, uniqueIdentifier: String) -> some View where Number: Strideable, Number: SwiftUI._FormatSpecifiable {
         Stepper(value: viewModel.binding(
             keyPath: keyPath,
             requiresRestart: requiresRestart,
